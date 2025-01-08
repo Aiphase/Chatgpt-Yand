@@ -19,7 +19,7 @@ def process_request():
     try:
         # Получаем входные данные от клиента
         data = request.json
-        user_input = data.get("text", "")
+        user_input = data.get("text", "")  # Убедитесь, что ключ совпадает с фронтендом
 
         if not user_input:
             return jsonify({"error": "Input text is required"}), 400
