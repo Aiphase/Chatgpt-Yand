@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
 import requests
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Конфигурация API
 YANDEX_API_URL = "https://llm.api.cloud.yandex.net/foundationModels/v1/completion"  # Замените на актуальный URL API
