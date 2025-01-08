@@ -34,15 +34,14 @@ def process_request():
             "folderId": FOLDER_ID  # Добавляем идентификатор каталога
         }
 
-        try:
-    response = requests.post(YANDEX_API_URL, headers=HEADERS, json=payload)
-    response.raise_for_status()
-    print("Ответ API:", response.json())
-except requests.exceptions.HTTPError as e:
-    print("Ошибка HTTP:", e)
-    print("Тело ответа:", response.text)
-except Exception as e:
-    print("Произошла ошибка:", e)
+        # Отправляем запрос к API
+        response = requests.post(YANDEX_API_URL, headers=HEADERS, json=payload)
+        response.raise_for_status()
 
+        # Возвращаем ответ от API
+        return jsonify(response.json())
+    except requests.exceptions.RequestException as e:
+        return jsonify({"error": str(e)}), 500
+        
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
