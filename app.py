@@ -26,7 +26,7 @@ def process_request():
 
         # Формируем тело запроса к API
         payload = {
-            "text": user_input,  # Здесь используется "text", как требуется API
+            "text": "Привет! Как дела?",  # Здесь используется "text", как требуется API
             "temperature": 0.7,
             "max_tokens": 200,
             "top_p": 0.9,
