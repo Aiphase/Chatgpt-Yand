@@ -8,6 +8,7 @@ CORS(app)
 # Конфигурация API
 YANDEX_API_URL = "https://llm.api.cloud.yandex.net/foundationModels/v1/completion"  # URL API
 API_KEY = "your_api_key_here"  # Ваш API-ключ
+FOLDER_ID = "your_folder_id_here"  # Идентификатор каталога
 HEADERS = {
     "Authorization": f"Bearer {API_KEY}",
     "Content-Type": "application/json"
@@ -29,7 +30,8 @@ def process_request():
             "temperature": 0.7,
             "max_tokens": 200,
             "top_p": 0.9,
-            "stop": ["\n"]
+            "stop": ["\n"],
+            "folderId": FOLDER_ID  # Добавляем идентификатор каталога
         }
 
         # Отправляем запрос к API
