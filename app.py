@@ -4,7 +4,7 @@ import requests
 app = Flask(__name__)
 
 # Конфигурация API
-YANDEX_API_URL = "https://api.yandexcloud.net/gpt/v4/generate"  # Замените на актуальный URL API
+YANDEX_API_URL = "https://llm.api.cloud.yandex.net/foundationModels/v1/completion"  # Замените на актуальный URL API
 API_KEY = "your_api_key_here"  # Ваш API-ключ
 HEADERS = {
     "Authorization": f"Bearer {API_KEY}",
