@@ -15,7 +15,7 @@ HEADERS = {
     "Content-Type": "application/json"
 }
 
-@app.route('/process', methods=['POST'])
+@app.route('/', methods=['POST'])
 def process_request():
     try:
         # Получаем входные данные от клиента
