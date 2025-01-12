@@ -29,8 +29,8 @@ def process_request():
         payload = {
             "text": "Привет! Как дела?",  # Здесь используется "text", как требуется API
             "temperature": 0.7,
-            "max_tokens": 200,
-            "top_p": 0.9,
+            "maxTokens": 200,
+            "topP": 0.9,
             "stop": ["\n"],
             "folderId": FOLDER_ID  # Добавляем идентификатор каталога
         }
